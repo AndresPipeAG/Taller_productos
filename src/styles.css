@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+.padding {
+    padding: 20px;
+}
+
+.button {
+    margin:10px;
+}

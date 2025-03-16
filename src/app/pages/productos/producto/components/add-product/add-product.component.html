@@ -1,0 +1,38 @@
+<div class="container formulario padding">
+    <form [formGroup]="productForm" (submit)="onSubmit()" >
+
+        <div class="mb-3 row">
+            <label for="code" class="col-sm-2 col-form-label">Codigo</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="code" formControlName="code">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="productName" class="col-sm-2 col-form-label">Nombre Producto</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="productName" formControlName="productName">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="description" class="col-sm-2 col-form-label">Descripcion</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="description" formControlName="description">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="producer" class="col-sm-2 col-form-label">Productor</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="producer" formControlName="producer">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="date" class="col-sm-2 col-form-label">Fecha de Caducidad</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="date" formControlName="date">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success" (click)="onSubmit()">Aceptar</button>
+
+    </form>
+</div>
