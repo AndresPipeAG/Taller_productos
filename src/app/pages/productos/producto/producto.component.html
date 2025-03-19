@@ -1,6 +1,6 @@
 <div class="container padding">
     <div class="button">
-        <a routerLink="/add-product" class="btn btn-success" >+Añadir</a>
+        <a routerLink="/add-product" class="btn btn-success">+Añadir</a>
     </div>
     <table class="table table-striped-columns">
         <thead>
@@ -10,23 +10,23 @@
                 <th class="table-dark">Descripcion</th>
                 <th class="table-dark">Productor</th>
                 <th class="table-dark">Fecha de Caducidad</th>
-                
+
             </tr>
 
         </thead>
 
         <tbody>
-            <!-- @for(autor of autores; track autor) { -->
+            @for(producto of productos; track producto) {
             <tr>
-                <td class="table-dark"></td>
-                <td class="table-dark"></td>
-                <td class="table-dark"></td>
-                <td class="table-dark"></td>
-                <td class="table-dark"></td>
+                <td class="table-dark">{{ producto.code }}</td>
+                <td class="table-dark">{{ producto.productName }}</td>
+                <td class="table-dark">{{ producto.description }}</td>
+                <td class="table-dark">{{ producto.producer }}</td>
+                <td class="table-dark">{{ producto.date }}</td>
 
             </tr>
 
-            <!-- } -->
+            }
         </tbody>
 
     </table>

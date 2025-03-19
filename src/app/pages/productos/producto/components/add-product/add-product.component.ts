@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Component, inject } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule, FormArray } from '@angular/forms';
 import { ProductoService } from '../../services/producto.service';
+import { Producto } from '../../interfaces/producto';
 
 
 
@@ -25,14 +26,18 @@ export class AddProductComponent {
     date: new FormControl('')
   });
 
+  products = new FormArray([]);
+
   onSubmit() {
-    this.productoService.submitForm(
-      this.productForm.value.code ?? '',
-      this.productForm.value.productName ?? '',
-      this.productForm.value.description ?? '',
-      this.productForm.value.producer ?? '',
-      this.productForm.value.date ?? ''
-    );
+    let producto: Producto = {
+      code: this.productForm.value.code ?? '',
+      productName: this.productForm.value.productName ?? '',
+      description: this.productForm.value.description ?? '',
+      producer: this.productForm.value.producer ?? '',
+      date: this.productForm.value.date ?? ''
+    };
+
+    this.productoService.addProducto(producto);
 
 
     this.router.navigate(['/producto']);
